@@ -1,0 +1,13 @@
+body {
+  @extend %lato-600;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+}
+
+.container {
+  max-width: 1313px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+}
