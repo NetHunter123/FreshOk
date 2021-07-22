@@ -9,7 +9,8 @@ html {
 }
 
 ul,
-ol {
+ol,
+button {
   padding: 0;
 }
 
@@ -28,7 +29,8 @@ figure,
 figcaption,
 blockquote,
 dl,
-dd {
+dd,
+button {
   margin: 0;
 }
 
@@ -46,7 +48,7 @@ button {
   cursor: pointer;
   appearance: none;
   border: 0;
-  outline: transparent;
+  background-color: transparent;
   font-size: inherit;
   line-height: inherit;
   letter-spacing: inherit;
