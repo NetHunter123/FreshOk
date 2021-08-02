@@ -1,0 +1,20 @@
+.goods-offer {
+  background-color: $silver-200;
+  padding: 73px 0;
+  padding-top: 68px;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    grid-auto-rows: 124px;
+    justify-items: center;
+    grid-gap: 30px;
+    margin-bottom: 48px;
+
+  }
+
+  &__item {
+    width: 100%;
+    position: relative;
+  }
+}

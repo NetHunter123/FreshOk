@@ -54,6 +54,10 @@ button {
   letter-spacing: inherit;
 }
 
+address {
+  font-style: normal;
+}
+
 input,
 button,
 textarea,
@@ -65,24 +69,4 @@ a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-}
-
-
-address {
-  font-style: normal;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-input[type="number"]:hover,
-input[type="number"]:focus {
-  -moz-appearance: number-input;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }

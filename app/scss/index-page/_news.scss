@@ -1,0 +1,98 @@
+.news {
+  padding-bottom: 80px;
+
+  &__inner {
+    position: relative;
+  }
+
+  &__title {
+    width: fit-content;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  &__all {
+    position: absolute;
+    font-weight: 700;
+    line-height: 1;
+    right: 2px;
+    top: 12px;
+    color: $main-color;
+    padding-bottom: 6px;
+    border-bottom: 2px solid $main-color;
+    transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:focus {
+      color: $dark-900;
+      border-color: $dark-900;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__box {
+    position: relative;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    max-width: 410px;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+  &__date {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 76px;
+    width: 65px;
+    text-transform: uppercase;
+    text-align: center;
+    color: $dark-900;
+    background-color: $white;
+    border-radius: 0px 0px 4px 4px;
+    padding-top: 16px;
+  }
+
+  &__month {
+    display: block;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+
+  &__number {
+    display: block;
+    @extend %signika-600;
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  &__image {
+    width: 410px;
+    height: 240px;
+  }
+
+  &__description {
+    padding: 14px;
+
+    & p {
+      font-size: 18px;
+      color: $dark-900;
+      @include line-clamps(3);
+    }
+  }
+}

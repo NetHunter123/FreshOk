@@ -1,36 +1,65 @@
-$bg-dark: #31352B;
-$bg-light:#F6F6F6;
-$bg-green-dark:#4D800C;
-$btn-focus-shadow-light:#E0EDCF;
-$footer-placeholder:#4F4F4F;
-$border: rgba(17, 17, 17, 0.2);
-$title:#121212;
-$subtitle:#505050;
-$header-bottom-bg: #63A60F;
-$main-color: #63A60E;
-$sale:#CF3E3B;
-$hit: #FF7A00;
-$sale-text-color:#c1c1c1;
-$user-bg-hover:rgba(255, 255, 255, 0.1);
+$green-900 :#63A60F;
+$green-200 :#E0EDCF;
+$green-100 :#EFF6E7;
+
+$red-900: #CF3E3B;
+$orange-900:#FF7A00;
+$yellow-900:#FFB800;
+
+$dark-900:#121212;
+$dark-800:#31352B;
+$dark-500:#505050;
+
+$silver-600:#C1C1C1;
+$silver-200: #F5F5F5;
+$silver-100:#F6F6F6;
+
 $white: #fff;
 
+$bg-green-dark:#4D800C;
+$footer-placeholder:#4F4F4F;
+$border: rgba(17, 17, 17, 0.2);
+$main-color: #63A60E;
+$user-bg-hover:rgba($white, 0.1);
+
+@mixin line-clamps($n) {
+  @if $n<=1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  @else {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-line-clamp: $n;
+    -moz-line-clamp: $n;
+    line-clamp: $n;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// мені було лінь перевисувати всі екстенди ;) тому я їх 
+// підправив тепер там де lato підтягується 1 строка а де має 
+// бути signika всеодно прийшлось писати 2
+
 %lato-700 {
-  font-family: 'Lato-Bold', sans-serif;
   font-weight: 700;
 }
 
 %lato-600 {
-  font-family: 'Lato-Semibold', sans-serif;
   font-weight: 600;
 }
 
 %lato-400 {
-  font-family: 'Lato-Regular', sans-serif;
   font-weight: 400;
 }
 
 %lato-300 {
-  font-family: 'Lato-Light', sans-serif;
   font-weight: 300;
 }
 

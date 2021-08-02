@@ -1,0 +1,160 @@
+.footer {
+  background-color: $dark-800;
+  padding-top: 30px;
+  color: $white;
+  letter-spacing: 0;
+  @extend %lato-400;
+
+  &__logo {
+    width: fit-content;
+    margin-bottom: 24px;
+  }
+
+  &__info {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between
+  }
+
+  &__follow-us {
+    margin-right: 10px;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  &__subscribe-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+  }
+
+  &__input {
+    height: 100%;
+    max-width: 182px;
+    padding: 12px;
+    background: $white;
+    border: 0;
+    border-radius: 6px 0px 0px 6px;
+    outline: transparent;
+
+    &::placeholder {
+      @extend %lato-400;
+      line-height: 1;
+      color: $footer-placeholder;
+    }
+  }
+
+  &__menu {
+    display: grid;
+    // я зробив цей елемент через grid томущо я не зміг зробити через flex
+    // будьласка покажи як зробити це через флекс
+    grid-template-columns: repeat(auto-fill, minmax(122px, 1fr));
+    grid-column-gap: 85px;
+    max-width: 541px;
+    margin-right: -61px;
+  }
+
+  &__item {
+    white-space: nowrap;
+
+    & .footer__link {
+      display: block;
+      max-width: 132px;
+      @include line-clamps(1);
+    }
+  }
+
+  &__link {
+    transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out, transition 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:focus {
+      color: $main-color;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &__contacts {
+    margin-right: 4px;
+  }
+
+  &__text {
+    margin-bottom: 18px;
+  }
+
+  &__hotline {
+    margin-right: 5px;
+  }
+
+  &__address {
+    text-transform: capitalize;
+    margin-bottom: 19px;
+  }
+
+  &__social {
+    display: flex;
+
+    &-item {
+      &:not(:last-child) {
+        margin-right: 12px;
+      }
+    }
+
+    &-link {
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      display: block;
+
+      & svg {
+        transition: fill 0.3s ease-in-out;
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &:focus svg {
+        fill: $main-color;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba($white, 0.1);
+    padding: 20px 0px;
+    padding-left: 18px;
+
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__copy {
+    text-transform: uppercase;
+  }
+
+  &__cards {
+    display: flex;
+    margin-right: 8px;
+  }
+
+  &__card:not(:last-child) {
+    margin-right: 24px;
+  }
+}
