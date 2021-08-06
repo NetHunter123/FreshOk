@@ -2,18 +2,21 @@
   background-color: $silver-100;
 
   &__inner {
-    padding: 48px 0;
+    padding: 44px 0;
     display: flex;
     justify-content: center;
   }
 
   &__item {
+    max-width: 380px;
     padding: 5px 0 4px 70px;
     letter-spacing: 0;
     background-repeat: no-repeat;
     background-position: left center;
 
-    & {
+
+    /*я обнулив останній елемент але тепер він не підходить по піксель перфекту,що робити в даній ситуації лишати обнуленим ласт елемент чи не обнуляти але тоді підійде під Pixel P*/
+    &:not(:last-child) {
       margin-right: 62px;
     }
 
@@ -31,13 +34,15 @@
   }
 
   &__title {
-    @extend %lato-700;
+    font-weight: 700;
     font-size: 16px;
     margin-bottom: 7px;
+    @include line-clamps(2);
   }
 
   &__text p {
-    @extend %lato-400;
-    color: $dark-500
+    font-weight: 400;
+    color: $dark-500;
+    @include line-clamps(2);
   }
 }

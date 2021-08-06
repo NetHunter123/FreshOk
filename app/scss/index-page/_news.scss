@@ -5,25 +5,31 @@
     position: relative;
   }
 
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
   &__title {
-    width: fit-content;
-    margin-left: 0;
-    margin-right: auto;
+    margin: 0;
+    margin-bottom: 30px;
   }
 
   &__all {
-    position: absolute;
     font-weight: 700;
+    font-size: 17px;
     line-height: 1;
-    right: 2px;
-    top: 12px;
     color: $main-color;
-    padding-bottom: 6px;
+    padding: 6px 0;
     border-bottom: 2px solid $main-color;
     transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    max-width: 250px;
+    @include line-clamps(1);
 
     &:hover {
-      opacity: 0.7;
+      color: $bg-green-dark;
+      border-color: $bg-green-dark;
     }
 
     &:focus {
@@ -40,14 +46,21 @@
     display: flex;
   }
 
+  &__link {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
   &__box {
     position: relative;
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
     max-width: 410px;
+    color: $dark-900;
 
-    &:not(:last-child) {
-      margin-right: 30px;
+    &:hover .news__description {
+      color: $main-color;
     }
   }
 
@@ -55,14 +68,13 @@
     position: absolute;
     top: 0;
     left: 20px;
-    height: 76px;
-    width: 65px;
+    height: 72px;
+    min-width: 65px;
     text-transform: uppercase;
     text-align: center;
-    color: $dark-900;
     background-color: $white;
     border-radius: 0px 0px 4px 4px;
-    padding-top: 16px;
+    padding: 14px 6px 0 6px;
   }
 
   &__month {
@@ -76,7 +88,8 @@
 
   &__number {
     display: block;
-    @extend %signika-600;
+    font-family: $open-sans;
+    font-weight: 600;
     font-size: 30px;
     line-height: 1;
   }
@@ -87,12 +100,15 @@
   }
 
   &__description {
+    /*Я не додумався краще ніж задати висоту щоб вони всі були одинакові,
+     якщо так не підходить то підкажи як правильно, будьласка*/
+    min-height: 106px;
     padding: 14px;
+    transition: color 0.3s ease-in-out;
 
-    & p {
+    & h3 {
       font-size: 18px;
-      color: $dark-900;
-      @include line-clamps(3);
+      @include line-clamps(5);
     }
   }
 }
