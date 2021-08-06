@@ -22,6 +22,11 @@ $border: rgba(17, 17, 17, 0.2);
 $main-color: #63A60E;
 $user-bg-hover:rgba($white, 0.1);
 
+$open-sans: 'Open Sans',
+sans-serif;
+$lato:'Lato',
+sans-serif;
+
 @mixin line-clamps($n) {
   @if $n<=1 {
     white-space: nowrap;
@@ -41,44 +46,4 @@ $user-bg-hover:rgba($white, 0.1);
     box-orient: vertical;
     overflow: hidden;
   }
-}
-
-// мені було лінь перевисувати всі екстенди ;) тому я їх 
-// підправив тепер там де lato підтягується 1 строка а де має 
-// бути signika всеодно прийшлось писати 2
-
-%lato-700 {
-  font-weight: 700;
-}
-
-%lato-600 {
-  font-weight: 600;
-}
-
-%lato-400 {
-  font-weight: 400;
-}
-
-%lato-300 {
-  font-weight: 300;
-}
-
-%signika-700 {
-  font-family: 'Signika-Bold', sans-serif;
-  font-weight: 700;
-}
-
-%signika-600 {
-  font-family: 'Signika-Semibold', sans-serif;
-  font-weight: 600;
-}
-
-%signika-400 {
-  font-family: 'Signika-Regular', sans-serif;
-  font-weight: 400;
-}
-
-%signika-300 {
-  font-family: 'Signika-Light', sans-serif;
-  font-weight: 300;
 }

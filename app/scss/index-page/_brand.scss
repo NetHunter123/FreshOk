@@ -1,12 +1,11 @@
 .brand {
+  padding: 68px 0;
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-
-  &__item {}
 
   &__link {
     display: block;
@@ -16,14 +15,6 @@
 
     &:hover {
       opacity: 1;
-    }
-
-    &:focus {
-      border-bottom: 4px solid $dark-900;
-    }
-
-    &:active {
-      transform: scale(0.8);
     }
   }
 }
