@@ -1,0 +1,117 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  border: 1px solid $border;
+  border-radius: 6px;
+  transition: border-color 0.3s ease-in-out;
+  letter-spacing: 0;
+
+  &:hover {
+    border-color: $main-color;
+  }
+
+  &__favorite {
+    position: absolute;
+    top: 17px;
+    right: 12px;
+
+    svg {
+      transition: fill 0.3s ease-in-out;
+
+      &:hover {
+        fill: $yellow-900;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    margin-top: 49px;
+    margin-bottom: 9px;
+  }
+
+  &__description {
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 0 18px 18px 18px;
+  }
+
+  &__title {
+    @include line-clamps(3);
+  }
+
+  &__inner {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__price-box {
+    font-weight: 400;
+    line-height: 1;
+    color: $dark-500;
+    display: block;
+
+    &--offer {
+      position: relative;
+      color: $silver-600;
+      margin-bottom: 3px;
+      width: fit-content;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 42%;
+        transform: rotate(-8deg);
+        background-color: $silver-600;
+        height: 1px;
+        width: 100%;
+      }
+    }
+  }
+
+  &__price {
+    display: inline-block;
+    max-width: 90px;
+    margin-right: 7px;
+    @include line-clamps(1);
+    text-overflow: clip;
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    margin-right: -2px;
+    background-color: $main-color;
+    border-radius: 3px;
+    transition: background-color 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+
+    svg {
+      transition: fill 0.3s ease-in-out;
+    }
+
+    &:hover {
+      background-color: $bg-green-dark;
+    }
+
+    &:focus {
+      box-shadow: 0px 0px 0px 4px $green-200;
+    }
+
+    &:active {
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+      svg {
+        fill: rgba($white, 0.5);
+      }
+    }
+  }
+}
