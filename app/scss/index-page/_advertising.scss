@@ -24,7 +24,7 @@
       flex-grow: 2;
       color: $white;
 
-      p {
+      h3 {
         max-width: 510px;
       }
 
@@ -42,7 +42,7 @@
   &__text {
     margin-bottom: 12px;
 
-    & span {
+    span {
       display: block;
       line-height: 1;
       font-size: 12px;
@@ -52,7 +52,7 @@
       @include line-clamps(3);
     }
 
-    & p {
+    h3 {
       font-family: $open-sans;
       font-weight: 600;
       font-size: 30px;

@@ -15,6 +15,7 @@ $silver-200: #F5F5F5;
 $silver-100:#F6F6F6;
 
 $white: #fff;
+$black: #000;
 
 $bg-green-dark:#4D800C;
 $footer-placeholder:#4F4F4F;
@@ -45,5 +46,16 @@ sans-serif;
     -moz-box-orient: vertical;
     box-orient: vertical;
     overflow: hidden;
+  }
+}
+
+$sm:576;
+$md:768;
+$lg:992;
+$xl:1200;
+
+@mixin adaptive($width) {
+  @media only screen and (max-width: $width + 'px') {
+    @content;
   }
 }
