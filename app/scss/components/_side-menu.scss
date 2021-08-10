@@ -1,0 +1,154 @@
+@mixin side-menu-efect {
+  &:focus {
+    background-color: $main-color;
+    color: $white;
+
+    svg {
+      fill: $white;
+    }
+  }
+}
+
+.side-menu {
+  background-color: rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  overflow-y: scroll;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+
+  &--active {
+    width: 100%;
+  }
+
+  &__inner {
+    position: absolute;
+    max-width: 300px;
+    width: 100%;
+    background-color: $white;
+    z-index: 4;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  &__flank {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 15px;
+  }
+
+  &__close {
+    height: 22px;
+    width: 22px;
+    margin-right: 9px;
+  }
+
+  &__wrapper {
+    border-bottom: 1px solid rgba(193, 193, 193, 0.3);
+  }
+
+  &__entry {
+    display: flex;
+    align-items: center;
+    background-color: $main-color;
+    padding: 8px 30px;
+    color: $white;
+    line-height: 1;
+
+    &:focus {
+      color: $dark-800;
+
+      svg {
+        fill: $dark-800;
+      }
+    }
+  }
+
+  &__icon {
+    margin-right: 15px;
+  }
+
+  &__catalog {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    line-height: 1;
+    padding: 15px 30px;
+
+    @include side-menu-efect;
+  }
+
+  &__contacts {
+    padding-top: 14px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(193, 193, 193, 0.3);
+  }
+
+  &__tel {
+    display: flex;
+    align-items: center;
+    padding: 8px 30px;
+    @include side-menu-efect;
+  }
+
+  &__address {
+    display: flex;
+    align-items: center;
+    padding: 8px 30px;
+    margin-bottom: 8px;
+    @include side-menu-efect;
+  }
+
+  &__text {
+    max-width: 201px;
+    @include line-clamps(2);
+  }
+
+  &__social {
+    padding: 0 30px;
+
+    svg {
+      fill: $dark-800;
+    }
+
+    .social__link {
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      display: block;
+
+
+      &:hover svg {
+        fill: $main-color;
+      }
+
+    }
+  }
+
+  &__list {
+    padding: 10px 0;
+  }
+
+  &__item {}
+
+  &__link {
+    display: block;
+    padding: 8px 30px;
+    @include side-menu-efect;
+    max-width: 100%;
+    @include line-clamps(1);
+  }
+
+}

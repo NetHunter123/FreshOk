@@ -1,0 +1,259 @@
+.cart {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+  color: $black;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out, width 0.1s ease-in-out;
+  overflow: hidden;
+
+  @include r($xs) {
+    top: 112px;
+  }
+
+  &--active {
+    width: 100%;
+    transform: translateX(0);
+  }
+
+  &__side {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    @include r($xs) {
+      display: none;
+    }
+  }
+
+  &__inner {
+    position: absolute;
+    max-width: 485px;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+    right: 0;
+
+
+    @include r($xs) {
+      max-width: 100%;
+    }
+  }
+
+  &__top {
+    padding: 19px 24px;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include r($xs) {
+      padding: 22px 24px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__text {
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    margin-bottom: 2px;
+    max-width: 230px;
+    @include line-clamps(1);
+
+    @include r($xs) {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+  }
+
+  &__delete {
+    font-weight: 300;
+    font-size: 14px;
+    max-width: 230px;
+    @include line-clamps(1);
+  }
+
+  &__close {
+    margin-right: 2px;
+    margin-bottom: 15px;
+
+    @include r($xs) {
+      height: 21px;
+      width: 21px;
+      margin-right: 0px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__goods {
+    padding: 12px;
+    background-color: $silver-100;
+    height: inherit;
+    width: 100%;
+    overflow-y: scroll;
+
+    @include r($xs) {
+      padding: 6px 12px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__product {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border: 1px solid $silver-600;
+    background-color: $white;
+    border-radius: 3px;
+
+    @include r($xs) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 12px 17px;
+    }
+  }
+
+  &__info {
+    display: flex;
+
+    @include r($xs) {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__img {
+    margin-right: 32px;
+
+    @include r($xs) {
+      margin-right: 12px;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: auto;
+
+    @include r($xs) {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    margin-top: auto;
+    margin-bottom: 5px;
+
+    @include r($xs) {
+      max-width: inherit;
+      width: 94%;
+    }
+
+    h3 {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.4;
+      color: $dark-900;
+      @include line-clamps(2);
+      max-width: 170px;
+
+      @include r($xs) {
+        min-width: 100%;
+      }
+    }
+  }
+
+  &__wrap {
+    margin-top: auto;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    display: flex;
+    align-items: flex-end;
+
+
+    @include r($xs) {
+      width: 100%;
+      justify-content: space-between
+    }
+  }
+
+  &__coast {
+    line-height: 1;
+    font-weight: 600;
+    font-size: 20px;
+    color: $dark-500;
+    display: block;
+
+    &--product {
+      margin-bottom: auto;
+    }
+
+    &--total {
+      margin-right: -3px;
+      font-size: 24px;
+
+      @include r($xs) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__calculator {
+    margin-right: 8px;
+  }
+
+  &__bottom {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include r($xs) {
+      margin-top: auto;
+      padding: 10px 14px;
+    }
+  }
+
+  &__total {
+    @include line-clamps(1);
+    max-width: 220px;
+
+    @include r($xs) {
+      font-size: 14px;
+    }
+  }
+
+  &__price {}
+
+  &__money {
+    font-size: 14px;
+
+    &--total {
+      font-size: 18px;
+
+      @include r($xs) {
+        font-size: 14px;
+      }
+    }
+  }
+}
