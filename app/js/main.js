@@ -1,5 +1,11 @@
 $(function(){
-  $('.header__user-link--cart, .close__top,.cart__side').on('click',function(){
+
+  $('.header__menu-button,.side-menu__flank,.side-menu__close').on('click',function(){
+    $('.side-menu').toggleClass('side-menu--active');
+    $('body').toggleClass('body--active');
+  })
+
+  $('.header__user-link--cart, .cart__close,.cart__side').on('click',function(){
     $('.cart').toggleClass('cart--active');
     $('body').toggleClass('body--active');
   })
@@ -8,6 +14,11 @@ $(function(){
     $('.header__catalog').toggleClass('header__catalog--active');
     $('.header__menu').toggleClass('header__menu--active');
   })
+
+  $('.header__search-min').on('click',function(){
+    $('.header__form-search').toggleClass('header__form-search--active');
+  })
+  
   
   $('.publicity__inner').slick({
   });

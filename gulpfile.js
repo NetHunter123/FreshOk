@@ -9,12 +9,12 @@ const nunjucksRender   = require('gulp-nunjucks-render');
 const del              = require('del');
 const browserSync      = require('browser-sync').create();
 
-function browsersync(){
+async function browsersync(){
   browserSync.init({
     server:{
       baseDir: 'app/'
     },
-    notify:false
+    notify:false,
   })
 }
 function nunjucks(){
@@ -36,7 +36,7 @@ function styles() {
   .pipe(browserSync.stream())
 }
 
-function scripts(){
+async function scripts(){
   return src([
     'node_modules/jquery/dist/jquery.js',
     'node_modules/slick-carousel/slick/slick.js','node_modules/mixitup/dist/mixitup.js',
@@ -77,11 +77,11 @@ function build(){
   .pipe(dest('dist'))
 }
 
-function watching(){
+async function watching(){
   watch(['app/scss/**/*.scss'], styles);
-  watch(['app/*.njk'], nunjucks);
+  watch(['app/**/*.njk'], nunjucks);
   watch(['app/js/**/*.js','!app/js/main.min.js'],scripts);
-watch(['app/**/*.html']).on('change',browserSync.reload);
+watch(['app/**/*.html']).on('change',nunjucks,browserSync.reload);
 }
 exports.styles = styles;
 exports.scripts = scripts;

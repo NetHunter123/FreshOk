@@ -102,37 +102,6 @@
     margin-right: 5px;
   }
 
-  &__social {
-    display: flex;
-  }
-
-  &__social-item {
-    &:not(:last-child) {
-      margin-right: 12px;
-    }
-  }
-
-  &__social-link {
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    display: block;
-
-    & svg {
-      transition: fill 0.3s ease-in-out;
-    }
-
-    &:hover {
-      opacity: 0.7;
-    }
-
-    &:focus svg {
-      fill: $main-color;
-    }
-
-    &:active {
-      transform: scale(0.9);
-    }
-  }
-
   &__bottom {
     border-top: 1px solid rgba($white, 0.1);
     padding: 16px 0px;
