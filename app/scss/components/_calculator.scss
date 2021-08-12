@@ -1,0 +1,62 @@
+.calculator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__count {
+    text-align: center;
+    height: 24px;
+    width: 36px;
+    background-color: rgba(99, 166, 14, 0.1);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $dark-500;
+  }
+
+  &__decrement,
+  &__increment {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    width: 24px;
+    padding: 0 4px;
+    background-color: $main-color;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $bg-green-dark;
+    }
+
+    &:focus {
+      box-shadow: 0px 0px 0px 4px $green-200;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      height: 1px;
+      width: 16px;
+      background-color: $white;
+    }
+  }
+
+  &__decrement {
+    &::after {
+      content: none;
+    }
+  }
+
+  &__increment {
+    &::before {
+      transform: rotate(90deg);
+    }
+  }
+}

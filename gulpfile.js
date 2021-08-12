@@ -1,21 +1,27 @@
 const { src, dest, watch, parallel, series } = require('gulp');
 
-const scss          = require('gulp-sass')(require('sass'));
-const autoprefixer  = require('gulp-autoprefixer');
-const concat        = require('gulp-concat');
-const uglify        = require('gulp-uglify');
-const imagemin      = require('gulp-imagemin');
-const del           = require('del');
-const browserSync   = require('browser-sync').create();
+const scss             = require('gulp-sass')(require('sass'));
+const autoprefixer     = require('gulp-autoprefixer');
+const concat           = require('gulp-concat');
+const uglify           = require('gulp-uglify');
+const imagemin         = require('gulp-imagemin');
+const nunjucksRender   = require('gulp-nunjucks-render');
+const del              = require('del');
+const browserSync      = require('browser-sync').create();
 
-function browsersync(){
+async function browsersync(){
   browserSync.init({
     server:{
       baseDir: 'app/'
     },
-    notify:false
-    
+    notify:false,
   })
+}
+function nunjucks(){
+  return src('app/*.njk')
+  .pipe(nunjucksRender())
+  .pipe(dest('app'))
+  .pipe(browserSync.stream())      
 }
 
 function styles() {
@@ -30,7 +36,7 @@ function styles() {
   .pipe(browserSync.stream())
 }
 
-function scripts(){
+async function scripts(){
   return src([
     'node_modules/jquery/dist/jquery.js',
     'node_modules/slick-carousel/slick/slick.js','node_modules/mixitup/dist/mixitup.js',
@@ -71,17 +77,19 @@ function build(){
   .pipe(dest('dist'))
 }
 
-function watching(){
+async function watching(){
   watch(['app/scss/**/*.scss'], styles);
+  watch(['app/**/*.njk'], nunjucks);
   watch(['app/js/**/*.js','!app/js/main.min.js'],scripts);
-watch(['app/**/*.html']).on('change',browserSync.reload);
+watch(['app/**/*.html']).on('change',nunjucks,browserSync.reload);
 }
 exports.styles = styles;
 exports.scripts = scripts;
 exports.browsersync = browsersync;
 exports.watching = watching;
 exports.images = images;
+exports.nunjucks = nunjucks;
 exports.cleanDist = cleanDist;
 exports.build = series(cleanDist,images,build);
 
-exports.default = parallel(styles,scripts,browsersync,watching);
+exports.default = parallel(nunjucks,styles,scripts,browsersync,watching);

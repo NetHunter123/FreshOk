@@ -1,6 +1,10 @@
 .news {
   padding-bottom: 80px;
 
+  @include r($sm) {
+    padding-bottom: 48px;
+  }
+
   &__inner {
     position: relative;
   }
@@ -9,14 +13,38 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
+
+    @include r($xl) {
+      justify-content: space-around;
+    }
+
+    @include r($sm) {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+      margin-bottom: 24px;
+    }
+
+    @include r($xs) {
+      display: block;
+      width: fit-content;
+      margin: 0;
+      margin-bottom: 18px;
+    }
   }
 
   &__title {
     margin: 0;
     margin-bottom: 30px;
+
+    @include r($sm) {
+      margin-bottom: 4px;
+    }
   }
 
   &__all {
+    display: inline-block;
     font-weight: 700;
     font-size: 17px;
     line-height: 1;
@@ -44,12 +72,14 @@
 
   &__wrapper {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 18px;
   }
 
   &__link {
-    &:not(:last-child) {
-      margin-right: 30px;
-    }
+    &:not(:last-child) {}
   }
 
   &__box {
@@ -57,7 +87,12 @@
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
     max-width: 410px;
+    width: 100%;
     color: $dark-900;
+
+    @include r($md) {
+      max-width: 345px;
+    }
 
     &:hover .news__description {
       color: $main-color;
@@ -94,20 +129,35 @@
     line-height: 1;
   }
 
-  &__image {
-    width: 410px;
-    height: 240px;
+  &__image {}
+
+  &__img {
+    display: block;
+
+    @include r($md) {
+      height: 100%;
+    }
   }
 
   &__description {
     /*Я не додумався краще ніж задати висоту щоб вони всі були одинакові,
      якщо так не підходить то підкажи як правильно, будьласка*/
     min-height: 106px;
+
+    @include r($xs) {
+      min-height: auto;
+    }
+
     padding: 14px;
     transition: color 0.3s ease-in-out;
 
     & h3 {
       font-size: 18px;
+
+      @include r($md) {
+        font-size: 14px;
+      }
+
       @include line-clamps(5);
     }
   }

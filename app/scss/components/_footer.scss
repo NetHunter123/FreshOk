@@ -5,19 +5,58 @@
   letter-spacing: 0;
   font-weight: 400;
 
+  @include r($xs) {
+    padding-top: 24px;
+  }
+
+  .container {
+    @include r($xs) {
+      padding: 0;
+    }
+  }
+
   &__logo {
     width: fit-content;
     margin-bottom: 24px;
+
+    @include r($sm) {
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
   }
 
   &__info {
     margin-bottom: 30px;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+
+    @include r($sm) {
+      justify-content: center;
+      flex-wrap: wrap;
+      row-gap: 30px;
+      column-gap: 20px;
+    }
+
+    @include r($xs) {
+      flex-direction: column;
+      align-items: stretch;
+      flex-wrap: wrap;
+      row-gap: 24px;
+      margin-bottom: 26px;
+    }
   }
 
   &__follow-us {
     margin-right: 62px;
+
+    @include r($lg) {
+      margin-right: 0;
+    }
+
+    @include r($sm) {
+      margin: 0 auto;
+      order: 2;
+    }
   }
 
   &__label {
@@ -47,9 +86,49 @@
     }
   }
 
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+
+    @include r($sm) {
+      width: 100%;
+      order: 1;
+      border-bottom: 1px solid rgba($white, 0.1);
+    }
+  }
+
   &__menu {
     column-count: 3;
-    column-gap: 83px;
+    column-gap: 84px;
+
+    @include r($lg) {
+      column-gap: 28%;
+      // max-width: 37%;
+      max-width: 100%;
+
+    }
+
+    @include r($md) {
+      column-count: 2;
+      column-gap: 45%;
+      max-width: 80%;
+    }
+
+    @include r($sm) {
+      order: 1;
+      column-count: 2;
+      column-gap: 45%;
+      max-width: 100%;
+      //   margin-right: -62px;
+    }
+
+    @include r($xs) {
+      column-count: 2;
+      column-gap: 45%;
+      max-width: 100%;
+      padding-bottom: 8px;
+    }
   }
 
   &__item {
@@ -57,7 +136,6 @@
     @include line-clamps(1);
     width: fit-content;
     margin-bottom: 18px;
-
   }
 
   &__link {
@@ -90,6 +168,15 @@
 
   &__contacts {
     margin-right: 4px;
+
+    @include r($sm) {
+      border-bottom: 1px solid rgba($white, 0.1);
+      margin-right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 14px;
+    }
   }
 
   &__text {
@@ -102,57 +189,43 @@
     margin-right: 5px;
   }
 
-  &__social {
-    display: flex;
-  }
-
-  &__social-item {
-    &:not(:last-child) {
-      margin-right: 12px;
-    }
-  }
-
-  &__social-link {
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    display: block;
-
-    & svg {
-      transition: fill 0.3s ease-in-out;
-    }
-
-    &:hover {
-      opacity: 0.7;
-    }
-
-    &:focus svg {
-      fill: $main-color;
-    }
-
-    &:active {
-      transform: scale(0.9);
-    }
-  }
-
   &__bottom {
     border-top: 1px solid rgba($white, 0.1);
     padding: 16px 0px;
     padding-left: 18px;
 
+    @include r($xs) {
+      padding: 24px 0;
+    }
   }
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include r($xs) {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 20px;
+    }
   }
 
   &__copy {
     text-transform: uppercase;
+
+    @include r($xs) {
+      order: 1;
+    }
   }
 
   &__cards {
     display: flex;
     margin-right: 8px;
+
+    @include r($xs) {
+      margin: 0;
+    }
   }
 
   &__card:not(:last-child) {
