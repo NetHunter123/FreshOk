@@ -11,10 +11,6 @@
 
   &__top {
     background-color: $dark-800;
-
-    @include r($xs) {
-      padding: 0 6px;
-    }
   }
 
   &__menu-button {
@@ -150,7 +146,7 @@
     }
 
     @include r($xs) {
-      margin-right: 10px;
+      margin-right: 8px;
     }
   }
 
@@ -235,7 +231,7 @@
     position: relative;
 
     @include r($xs) {
-      margin-right: 5px;
+      margin-right: 0px;
     }
   }
 
@@ -295,6 +291,7 @@
 
     @include r($xs) {
       display: block;
+      margin-right: -6px;
     }
 
     &:hover {

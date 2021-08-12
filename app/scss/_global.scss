@@ -38,6 +38,10 @@ body {
   max-width: 1310px;
   margin: 0 auto;
   padding: 0 10px;
+
+  @include r($xs) {
+    padding: 0 15px;
+  }
 }
 
 .sr-only {
@@ -55,6 +59,10 @@ body {
 
 .section {
   padding: 71px 0;
+
+  @include r($sm) {
+    padding: 48px 0;
+  }
 }
 
 .title {
@@ -68,16 +76,35 @@ body {
   max-width: 500px;
   width: fit-content;
   @include line-clamps(1);
+
+  @include r($xs) {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
 }
 
 .categories {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-bottom: 51px;
+
+  @include r($xs) {
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+  }
 
   &__item {
     &:not(:last-child) {
       margin-right: 24px;
+
+      @include r($xs) {
+        margin-right: 18px;
+      }
+    }
+
+    @include r($xs) {
+      margin-bottom: 14px;
     }
   }
 
@@ -88,6 +115,10 @@ body {
     font-size: 15px;
     transition: border-bottom 0.2s ease-in-out;
 
+    @include r($xs) {
+      font-size: 14px;
+    }
+
     &:hover {
       border-bottom: 3px solid rgba($main-color, 0.2);
     }
@@ -97,7 +128,6 @@ body {
     border-bottom: 3px solid rgba($main-color, 0.2);
   }
 }
-
 
 .status {
   position: absolute;
@@ -154,6 +184,12 @@ body {
     padding: 12px 24px;
     margin: 0;
     margin-bottom: auto;
+
+    @include r($xs) {
+      font-size: 14px;
+      margin-left: 15px;
+    }
+
   }
 
   &--subscribe {

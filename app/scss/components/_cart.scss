@@ -6,9 +6,9 @@
   width: 0;
   background-color: rgba(0, 0, 0, 0.15);
   color: $black;
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out, width 0.1s ease-in-out;
+  transition: transform 0.3s ease-in-out, width 0.4s ease-in-out;
   overflow: hidden;
+  z-index: 9;
 
   @include r($xs) {
     top: 112px;
@@ -16,7 +16,6 @@
 
   &--active {
     width: 100%;
-    transform: translateX(0);
   }
 
   &__side {
@@ -33,7 +32,7 @@
 
   &__inner {
     position: absolute;
-    max-width: 485px;
+    max-width: 495px;
     width: 100%;
     height: 100%;
     background-color: $white;
@@ -197,12 +196,21 @@
     }
   }
 
+
+  &__price {
+    display: inline-block;
+    max-width: 95px;
+    @include line-clamps(1);
+    text-overflow: clip;
+  }
+
   &__coast {
     line-height: 1;
     font-weight: 600;
     font-size: 20px;
     color: $dark-500;
     display: block;
+    white-space: nowrap;
 
     &--product {
       margin-bottom: auto;
@@ -212,11 +220,16 @@
       margin-right: -3px;
       font-size: 24px;
 
+      & .cart__price {
+        max-width: 144px;
+      }
+
       @include r($xs) {
         font-size: 18px;
       }
     }
   }
+
 
   &__calculator {
     margin-right: 8px;

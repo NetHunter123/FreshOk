@@ -21,6 +21,7 @@ $(function(){
   
   
   $('.publicity__inner').slick({
+    dots:true,
   });
 
   var topGoods = document.querySelector('[data-ref="top-goods"]');

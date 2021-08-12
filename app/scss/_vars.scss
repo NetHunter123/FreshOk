@@ -55,7 +55,6 @@ $md:992;
 $lg:1200;
 $xl:1310;
 
-
 @mixin r($width) {
   @media only screen and (max-width: $width + 'px') {
     @content;

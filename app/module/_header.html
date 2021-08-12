@@ -3,7 +3,7 @@
     <div class="header__top">
       <div class="container">
         <div class="header__content">
-          <button class="header__menu-button" type="button">
+          <button class="header__menu-button" type="button" aria-label="меню">
             <span class="header__line"></span>
           </button>
           <ul class="header__list">
@@ -131,7 +131,7 @@
               </li>
             </ul>
           </div>
-          <button class="header__search-min">
+          <button class="header__search-min" type="button" aria-label="поиск">
           </button>
           <form class="header__form-search">
             <div class="header__box">
@@ -180,12 +180,13 @@
 </header>
 
 <section class="side-menu">
+  <h2 class="sr-only">Главное меню</h2>
   <div class="side-menu__inner">
     <div class="side-menu__top">
       <a class="logo" href="#">
         <img class="logo__img" width="200" height="60" src="images/logo-green.svg" alt="Логотип">
       </a>
-      <div class="close side-menu__close"></div>
+      <button class="close side-menu__close" aria-label="закрыть"></button>
     </div>
     <div class="side-menu__wrapper">
       <a class="side-menu__entry" href="#">
@@ -193,7 +194,7 @@
           <path
             d="M22.6785 19.9427C21.6076 18.3799 20.213 17.0955 18.5934 16.1643C20.4901 14.467 21.686 12.0018 21.686 9.26225C21.6861 4.15505 17.5311 0 12.4238 0C7.31656 0 3.1615 4.15505 3.1615 9.26225C3.1615 12.0018 4.35743 14.4669 6.25416 16.1643C4.63447 17.0956 3.23995 18.3799 2.16902 19.9427C0.750061 22.0134 0 24.4315 0 26.9359V32H24.8476V26.9359C24.8477 24.4315 24.0976 22.0133 22.6785 19.9427ZM5.10099 9.26225C5.10099 5.22444 8.38604 1.93939 12.4239 1.93939C16.4617 1.93939 19.7467 5.22444 19.7467 9.26225C19.7467 13.3002 16.4617 16.5852 12.4239 16.5852C8.38604 16.5852 5.10099 13.3002 5.10099 9.26225ZM1.93939 30.0606V26.9359C1.93939 22.8273 4.31922 19.1418 8.04034 17.4197C9.34604 18.1242 10.839 18.5245 12.4238 18.5245C14.0085 18.5245 15.5015 18.1241 16.8072 17.4197C20.5284 19.1417 22.9081 22.8273 22.9081 26.9359V30.0606H1.93939Z" />
         </svg>
-        <span class="side-menu__text">Вход &nbsp | Регистрация</span>
+        <span class="side-menu__text">Вход &nbsp;| Регистрация</span>
       </a>
       <a class="side-menu__catalog" href="#">
         <svg class="side-menu__icon" width="26" height="17" viewBox="0 0 26 17" fill="#31352B">
@@ -330,13 +331,13 @@
         <h2 class="cart__title">Корзина</h2>
         <button class="cart__delete">очистить корзину</button>
       </div>
-      <div class="close cart__close"></div>
+      <button class="close cart__close" type="button" aria-label="закрыть"></button>
     </div>
     <ul class="cart__goods">
       <li class="cart__item">
         <article class="cart__product">
           <div class="cart__info">
-            <div class="close close--product"></div>
+            <button class="close close--product" aria-label="закрыть"></button>
             <a class="cart__img" href="#">
               <img src="images/cart-goods/pineapple.jpg" alt="Ананас" height="60" width="60">
             </a>
@@ -370,7 +371,7 @@
       <li class="cart__item">
         <article class="cart__product">
           <div class="cart__info">
-            <div class="close close--product"></div>
+            <button class="close close--product" aria-label="закрыть"></button>
             <a class="cart__img" href="#">
               <img src="images/cart-goods/dragon-fruit.jpg" alt="Питахайя" height="60" width="60">
             </a>
@@ -404,7 +405,7 @@
       <li class="cart__item">
         <article class="cart__product">
           <div class="cart__info">
-            <div class="close close--product"></div>
+            <button class="close close--product" aria-label="закрыть"></button>
             <a class="cart__img" href="#">
               <img src="images/cart-goods/pineapple.jpg" alt="Ананас" height="60" width="60">
             </a>
@@ -438,7 +439,7 @@
       <li class="cart__item">
         <article class="cart__product">
           <div class="cart__info">
-            <div class="close close--product"></div>
+            <button class="close close--product" aria-label="закрыть"></button>
             <a class="cart__img" href="#">
               <img src="images/cart-goods/dragon-fruit.jpg" alt="Питахайя" height="60" width="60">
             </a>
@@ -472,7 +473,7 @@
       <li class="cart__item">
         <article class="cart__product">
           <div class="cart__info">
-            <div class="close close--product"></div>
+            <button class="close close--product" aria-label="закрыть"></button>
             <a class="cart__img" href="#">
               <img src="images/cart-goods/pineapple.jpg" alt="Ананас" height="60" width="60">
             </a>
@@ -506,7 +507,7 @@
       <li class="cart__item">
         <article class="cart__product">
           <div class="cart__info">
-            <div class="close close--product"></div>
+            <button class="close close--product" aria-label="закрыть"></button>
             <a class="cart__img" href="#">
               <img src="images/cart-goods/dragon-fruit.jpg" alt="Питахайя" height="60" width="60">
             </a>
@@ -540,7 +541,7 @@
       <li class="cart__item">
         <article class="cart__product">
           <div class="cart__info">
-            <div class="close close--product"></div>
+            <button class="close close--product" aria-label="закрыть"></button>
             <a class="cart__img" href="#">
               <img src="images/cart-goods/pineapple.jpg" alt="Ананас" height="60" width="60">
             </a>
@@ -574,7 +575,7 @@
       <li class="cart__item">
         <article class="cart__product">
           <div class="cart__info">
-            <div class="close close--product"></div>
+            <button class="close close--product" aria-label="закрыть"></button>
             <a class="cart__img" href="#">
               <img src="images/cart-goods/dragon-fruit.jpg" alt="Питахайя" height="60" width="60">
             </a>

@@ -19,6 +19,7 @@
   overflow: hidden;
   overflow-y: scroll;
   width: 0;
+  z-index: 10;
   transition: width 0.3s ease-in-out;
 
   &--active {
