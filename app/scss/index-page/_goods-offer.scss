@@ -24,9 +24,13 @@
     }
 
     @include r($sm) {
-      grid-template-columns: repeat(1, 300px);
-      grid-gap: 15px;
+      grid-template-columns: repeat(2, 278px);
+      grid-gap: 10px;
       margin-bottom: 24px;
+    }
+
+    @include r($xs) {
+      grid-template-columns: repeat(1, 300px);
     }
 
   }

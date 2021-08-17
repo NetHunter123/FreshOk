@@ -3,14 +3,22 @@
   justify-content: center;
   background-color: $silver-100;
 
-  @include r(376) {
+  @include r($xs) {
     display: block;
+  }
+
+  .container {
+    width: 100%;
   }
 
   &__inner {
     padding: 44px 0;
     display: flex;
     justify-content: center;
+
+    @include r($md) {
+      padding-right: 0;
+    }
 
     @include r($sm) {
       padding: 30px 0;
@@ -25,8 +33,12 @@
   }
 
   &__item {
-    max-width: 380px;
-    padding: 5px 0 4px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 275px;
+    width: 100%;
+    padding: 5px 0 4px 74px;
     letter-spacing: 0;
     background-repeat: no-repeat;
     background-position: left center;
@@ -42,9 +54,8 @@
 
     }
 
-    /*я обнулив останній елемент але тепер він не підходить по піксель перфекту,що робити в даній ситуації лишати обнуленим ласт елемент чи не обнуляти але тоді підійде під Pixel P*/
     &:not(:last-child) {
-      margin-right: 62px;
+      margin-right: 48px;
 
       @include r($md) {
         margin-right: 20px;
@@ -76,12 +87,16 @@
     font-weight: 700;
     font-size: 16px;
     margin-bottom: 7px;
-    @include line-clamps(2);
+    @include line-clamps(1);
+    max-width: 193px;
+
   }
 
   &__text p {
     font-weight: 400;
     color: $dark-500;
-    @include line-clamps(2);
+    @include line-clamps(1);
+    max-width: 193px;
+
   }
 }

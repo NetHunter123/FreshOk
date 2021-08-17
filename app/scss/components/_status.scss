@@ -1,0 +1,36 @@
+.status {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  &__item {
+    display: block;
+    width: fit-content;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: inherit;
+    color: $white;
+    line-height: 1;
+    border-radius: 6px;
+    padding: 3px 8px;
+    text-transform: uppercase;
+    max-width: 100px;
+    @include line-clamps(1);
+
+    &:not(:last-child) {
+      margin-bottom: 6px;
+    }
+
+    &--new {
+      background-color: $main-color;
+    }
+
+    &--offer {
+      background-color: $red-900;
+    }
+
+    &--hit {
+      background-color: $orange-900;
+    }
+  }
+}

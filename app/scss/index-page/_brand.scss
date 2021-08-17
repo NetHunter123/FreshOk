@@ -1,35 +1,76 @@
 .brand {
   padding: 68px 0;
+  overflow: hidden;
 
   @include r($sm) {
     padding: 48px 0;
   }
 
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  &__inner {}
 
-    @include r($xs) {
-      padding: 0 15px;
-      overflow-x: scroll;
+  &__wrapper {
+    margin: 0 -81px;
+
+    @include r($xl) {
+      margin: 0;
+      margin-right: 0px;
     }
   }
 
+  // .slick-slide {
+  //   &:not(:last-child) {
+  //     margin-right: 162px;
+
+  //     @include r($xl) {
+  //       margin-right: 135px;
+  //     }
+
+  //     @include r($lg) {
+  //       margin-right: 98px;
+  //     }
+
+  //     @include r($md) {
+  //       margin-right: 53px;
+  //     }
+
+  //     @include r($sm) {
+  //       margin-right: 70px;
+  //     }
+  //   }
+  // }
+
   &__item {
-    &:not(:last-child) {
-      @include r($xs) {
-        margin-right: 100px;
-      }
+    margin: 0 81px;
+    width: fit-content;
+
+    @include r($xl) {
+      margin: 0 50px;
     }
+
+    @include r($md) {
+      margin: 0 30px;
+    }
+
+    @include r($sm) {
+      margin: 0 35px;
+    }
+
+    @include r($xs) {
+      margin: 0 40px;
+    }
+
+    // @include r($lg) {
+    //   margin: 0 49px;
+    // }
   }
 
   &__link {
     display: block;
+    width: fit-content;
     opacity: 0.5;
-    transition: opacity 0.3s ease-in-out, border-bottom 0.3s ease-in-out,
+    transition: opacity 0.3s ease-in-out,
+      border-bottom 0.3s ease-in-out,
       transform 0.3s ease-in-out;
-    width: 80px;
 
     &:hover {
       opacity: 1;
@@ -39,8 +80,6 @@
       opacity: 1;
     }
   }
-
-
 
   &__img {
     display: block;

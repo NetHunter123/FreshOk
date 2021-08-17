@@ -1,11 +1,8 @@
 .product-offer {
   height: 100%;
-  padding: 12px;
-  padding-bottom: 6px;
   border: 1px solid $border;
   border-radius: 6px;
   display: flex;
-  justify-content: space-between;
   background-color: $white;
   transition: border-color 0.3s ease-in-out;
   letter-spacing: 0;
@@ -14,8 +11,24 @@
     border-color: $main-color;
   }
 
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px;
+    padding-bottom: 6px;
+  }
+
   &__img {
     margin-right: 10px;
+
+    @include r($sm) {
+      margin-right: 3px;
+    }
+
+    @include r($xs) {
+      margin-right: 10px;
+    }
   }
 
   &__description {
@@ -90,6 +103,7 @@
   &__rating {
     display: flex;
     align-items: center;
+    margin-bottom: 5px;
 
     & span {
       margin-right: 3px;

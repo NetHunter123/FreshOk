@@ -28,7 +28,7 @@
     @include r($xs) {
       margin-bottom: 24px;
       grid-gap: 5px;
-      grid-template-columns: repeat(auto-fill, 142px);
+      grid-template-columns: repeat(auto-fill, 170px);
       grid-auto-rows: 304px;
     }
   }

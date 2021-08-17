@@ -28,6 +28,18 @@ sans-serif;
 $lato:'Lato',
 sans-serif;
 
+$xs:576;
+$sm:768;
+$md:992;
+$lg:1200;
+$xl:1310;
+
+@mixin r($width) {
+  @media only screen and (max-width: $width + 'px') {
+    @content;
+  }
+}
+
 @mixin line-clamps($n) {
   @if $n<=1 {
     white-space: nowrap;
@@ -46,17 +58,5 @@ sans-serif;
     -moz-box-orient: vertical;
     box-orient: vertical;
     overflow: hidden;
-  }
-}
-
-$xs:576;
-$sm:768;
-$md:992;
-$lg:1200;
-$xl:1310;
-
-@mixin r($width) {
-  @media only screen and (max-width: $width + 'px') {
-    @content;
   }
 }

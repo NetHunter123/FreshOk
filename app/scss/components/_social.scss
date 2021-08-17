@@ -1,7 +1,6 @@
 .social {
   display: flex;
 
-
   &__item {
     &:not(:last-child) {
       margin-right: 12px;
@@ -12,7 +11,8 @@
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     display: block;
 
-    & svg {
+    svg {
+      fill: white;
       transition: fill 0.3s ease-in-out;
     }
 

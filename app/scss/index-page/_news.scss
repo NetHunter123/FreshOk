@@ -1,5 +1,5 @@
 .news {
-  padding-bottom: 80px;
+  padding-bottom: 76px;
 
   @include r($sm) {
     padding-bottom: 48px;
@@ -16,13 +16,10 @@
     flex-wrap: wrap;
 
     @include r($xl) {
-      justify-content: space-around;
+      justify-content: space-between;
     }
 
     @include r($sm) {
-      display: block;
-      width: fit-content;
-      margin: 0 auto;
       margin-bottom: 24px;
     }
 
@@ -36,7 +33,7 @@
 
   &__title {
     margin: 0;
-    margin-bottom: 30px;
+    margin-bottom: 26px;
 
     @include r($sm) {
       margin-bottom: 4px;
@@ -54,6 +51,7 @@
     transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
     max-width: 250px;
     @include line-clamps(1);
+    margin-right: 4px;
 
     &:hover {
       color: $bg-green-dark;
@@ -70,46 +68,81 @@
     }
   }
 
-  &__wrapper {
+  &__list {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    column-gap: 30px;
-    row-gap: 18px;
+
+    @include r($sm) {
+      margin-right: -10px;
+    }
+
+    @include r($xs) {
+      margin-right: 0px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 30px;
+
+      @include r($xl) {
+        margin-bottom: 30px;
+      }
+
+      @include r($sm) {
+        margin-right: 10px;
+        margin-bottom: 15px;
+      }
+
+      @include r($xs) {
+        margin-right: 0px;
+      }
+    }
+  }
+}
+
+.news-card {
+  position: relative;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  max-width: 410px;
+  width: 100%;
+  height: 100%;
+  color: $dark-900;
+
+  @include r($md) {
+    max-width: 345px;
+  }
+
+  @include r($sm) {
+    max-width: 265px;
+  }
+
+  @include r($xs) {
+    max-width: 100%;
   }
 
   &__link {
-    &:not(:last-child) {}
-  }
-
-  &__box {
-    position: relative;
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
-    border-radius: 6px;
-    max-width: 410px;
-    width: 100%;
-    color: $dark-900;
-
-    @include r($md) {
-      max-width: 345px;
+    @include r($xs) {
+      width: 100%;
     }
 
-    &:hover .news__description {
+    &:hover .news-card__description {
       color: $main-color;
     }
   }
 
   &__date {
     position: absolute;
-    top: 0;
-    left: 20px;
-    height: 72px;
+    top: 0px;
+    left: 22px;
     min-width: 65px;
     text-transform: uppercase;
     text-align: center;
     background-color: $white;
     border-radius: 0px 0px 4px 4px;
-    padding: 14px 6px 0 6px;
+    padding: 19px 6px 10px 6px;
   }
 
   &__month {
@@ -129,36 +162,28 @@
     line-height: 1;
   }
 
-  &__image {}
-
   &__img {
     display: block;
+    width: 100%;
+    height: auto;
 
-    @include r($md) {
-      height: 100%;
+    @include r($xs) {
+      max-width: 100%;
     }
   }
 
   &__description {
-    /*Я не додумався краще ніж задати висоту щоб вони всі були одинакові,
-     якщо так не підходить то підкажи як правильно, будьласка*/
-    min-height: 106px;
+    font-size: 18px;
+    padding: 18px 14px;
+    transition: color 0.3s ease-in-out;
+    @include line-clamps(5);
 
-    @include r($xs) {
-      min-height: auto;
+    @include r($md) {
+      font-size: 14px;
     }
 
-    padding: 14px;
-    transition: color 0.3s ease-in-out;
-
-    & h3 {
-      font-size: 18px;
-
-      @include r($md) {
-        font-size: 14px;
-      }
-
-      @include line-clamps(5);
+    @include r($xs) {
+      max-width: 410px;
     }
   }
 }

@@ -3,9 +3,16 @@
 @import 'vars';
 @import 'libs';
 @import 'global';
+
+@import './components/btn';
 @import './components/header';
-@import 'index-page';
+@import './components/status';
 @import './components/product-card';
+@import './components/availability';
 @import './components/product-offer';
 @import './components/advantages';
 @import './components/footer';
+@import './components/social';
+
+
+@import 'index-page';

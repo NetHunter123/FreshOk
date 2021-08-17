@@ -16,11 +16,12 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^2.3.0",
     "gulp-imagemin": "^7.1.0",
-    "gulp-nunjucks-render": "^2.2.3",
     "gulp-sass": "^5.0.0",
     "gulp-scss": "^1.4.0",
     "gulp-sourcemaps": "^3.0.0",
+    "gulp-svg-sprite": "^1.5.0",
     "gulp-terser": "^2.0.1",
     "gulp-uglify": "^3.0.2",
     "jquery": "^3.6.0",
@@ -28,7 +29,5 @@
     "sass": "^1.35.2",
     "slick-carousel": "^1.8.1"
   },
-  "dependencies": {
-    "lodash": "^4.17.21"
-  }
+  "dependencies": {}
 }

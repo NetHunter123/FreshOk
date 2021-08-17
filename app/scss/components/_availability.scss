@@ -1,0 +1,21 @@
+.availability {
+  display: block;
+  text-transform: uppercase;
+  font-size: 10px;
+  line-height: 1;
+  max-width: 120px;
+  margin-bottom: 2px;
+  @include line-clamps(1);
+
+  &--available {
+    color: $main-color;
+  }
+
+  &--not-available {
+    color: $silver-600;
+  }
+
+  &--waste {
+    color: $red-900;
+  }
+}

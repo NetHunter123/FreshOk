@@ -4,3 +4,56 @@
 @import './index-page/goods-offer';
 @import './index-page/brand';
 @import './index-page/news';
+
+.categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 51px;
+
+  @include r($sm) {
+    margin-bottom: 20px;
+  }
+
+  @include r($xs) {
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 24px;
+
+      @include r($xs) {
+        margin-right: 18px;
+      }
+    }
+
+    @include r($xs) {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__btn {
+    text-transform: uppercase;
+    color: $dark-500;
+    font-weight: 700;
+    font-size: 15px;
+    border-color: rgba($main-color, 0.2);
+    transition: border-bottom 0.1s ease-in-out;
+
+    @include r($xs) {
+      font-size: 14px;
+    }
+
+    &:hover {
+      border-bottom: 3px solid rgba($main-color, 0.2);
+    }
+  }
+
+  .mixitup-control-active {
+    border-bottom: 3px solid rgba($main-color, 0.2);
+  }
+}

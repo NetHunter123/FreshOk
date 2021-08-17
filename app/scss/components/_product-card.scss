@@ -7,6 +7,7 @@
   border-radius: 6px;
   transition: border-color 0.3s ease-in-out;
   letter-spacing: 0;
+  padding: 12px;
 
   &:hover {
     border-color: $main-color;
@@ -29,16 +30,18 @@
   &__link {
     display: block;
     margin-top: 49px;
-    margin-bottom: 9px;
+    margin-bottom: 24px;
+    width: 100%;
+
 
     @include r($sm) {
-      width: 245px;
       height: 245px;
+
     }
 
     @include r($xs) {
-      width: 140px;
       height: 140px;
+      margin-bottom: 15px;
     }
   }
 
@@ -48,14 +51,14 @@
   }
 
   &__description {
-    height: inherit;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding: 0 18px 18px 18px;
+    padding: 0 6px 6px 6px;
 
     @include r($xs) {
-      padding: 0 12px 12px 12px;
+      padding: 0;
     }
   }
 
