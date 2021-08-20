@@ -40,6 +40,13 @@ $xl:1310;
   }
 }
 
+@mixin rh($height) {
+  @media only screen and (max-height: $height + 'px') {
+    @content;
+  }
+}
+
+
 @mixin line-clamps($n) {
   @if $n<=1 {
     white-space: nowrap;
@@ -59,4 +66,12 @@ $xl:1310;
     box-orient: vertical;
     overflow: hidden;
   }
+}
+
+@mixin input-hidden {
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  position: absolute;
 }

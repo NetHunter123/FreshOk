@@ -1,6 +1,6 @@
 @import 'side-menu';
 @import 'cart';
-@import 'calculator';
+@import '../calculator';
 
 .header {
   &__content {
@@ -13,7 +13,7 @@
     background-color: $dark-800;
   }
 
-  &__menu-button {
+  &__btn {
     display: none;
     position: relative;
     justify-content: center;
@@ -139,17 +139,17 @@
   &__logo {
     @include r($sm) {
       margin-right: 10px;
-
-      img {
-        @include r($sm) {
-          width: 37px;
-          height: 40px;
-        }
-      }
     }
 
     @include r($xs) {
       margin-right: 8px;
+    }
+
+    img {
+      @include r($sm) {
+        width: 37px;
+        height: 40px;
+      }
     }
   }
 
@@ -274,9 +274,6 @@
     font-size: 16px;
     transition: height 0.3s ease-in-out;
 
-    // &--active {
-    //   height: 615px;
-    // }
   }
 
   &__catalog-item {
@@ -455,7 +452,7 @@
     align-items: center;
     margin-right: 13px;
 
-    @include r($xs) {
+    @include r($lg) {
       margin-right: 0;
     }
   }

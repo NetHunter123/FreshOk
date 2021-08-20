@@ -7,17 +7,14 @@
   color: $black;
   transition: width 0.2s linear 0.2s;
   overflow: hidden;
-  z-index: 9;
+  z-index: 11;
 
   @include r($xs) {
     top: 112px;
   }
 
-  &--active {
-    width: 100%;
-  }
-
-  &__side {
+  &::before {
+    content: attr(cart__side);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -27,13 +24,17 @@
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 
-    &--active {
-      opacity: 1;
-      transition-delay: 0.4s;
-    }
-
     @include r($xs) {
       display: none;
+    }
+  }
+
+  &--active {
+    width: 100%;
+
+    &::before {
+      opacity: 1;
+      transition-delay: 0.4s;
     }
   }
 
@@ -121,7 +122,7 @@
     background-color: $silver-100;
     height: inherit;
     width: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     @include r($xs) {
       padding: 6px 12px;
@@ -187,18 +188,18 @@
         max-width: inherit;
         width: 94%;
       }
+    }
 
-      h3 {
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 1.4;
-        color: $dark-900;
-        @include line-clamps(2);
-        max-width: 170px;
+    &__text {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.4;
+      color: $dark-900;
+      @include line-clamps(2);
+      max-width: 170px;
 
-        @include r($xs) {
-          min-width: 100%;
-        }
+      @include r($xs) {
+        min-width: 100%;
       }
     }
 
@@ -215,7 +216,7 @@
       }
     }
 
-    &__coast {
+    &__cost {
       line-height: 1;
       font-weight: 600;
       font-size: 20px;

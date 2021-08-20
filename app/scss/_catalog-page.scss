@@ -1,0 +1,593 @@
+.catalog {
+  padding-top: 48px;
+  padding-bottom: 72px;
+
+  @include r($md) {
+    padding-top: 30px;
+    padding-bottom: 24px;
+  }
+
+  &__title {
+    font-family: $open-sans;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 48px;
+
+    @include r($lg) {
+      width: fit-content;
+      margin: 0 auto 48px;
+    }
+
+    @include r($md) {
+      font-size: 38px;
+      margin-bottom: 30px;
+    }
+
+    @include r($xs) {
+      font-size: 30px;
+      margin: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__wrap {
+    margin-right: 30px;
+
+    @include r($lg) {
+      position: absolute;
+      overflow-x: hidden;
+      width: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 11;
+      transition: width 0.2s linear 0.2s, background-color 0.3s ease-in-out;
+    }
+
+    &--active {
+      @include r($lg) {
+        width: 100%;
+        overflow-y: auto;
+        background-color: rgba(0, 0, 0, 0.15);
+        transition: width 0.2s linear 0.2s, background-color 0.3s ease-in-out 0.3s;
+
+
+        &::before {
+          opacity: 1;
+          transition-delay: 0.4s;
+        }
+      }
+    }
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__content-filters {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 48px;
+
+    @include r($lg) {
+      justify-content: center;
+    }
+
+    @include r($md) {
+      margin-bottom: 30px;
+    }
+
+    @include r($xs) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__filter-btn {
+    display: none;
+    width: 47px;
+    height: 47px;
+    background-color: #F6F6F6;
+    border-radius: 3px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/filter.svg);
+    padding: 7px;
+    margin-right: 10px;
+
+    @include r($lg) {
+      display: block;
+    }
+  }
+
+  &__select-form {
+    display: flex;
+    margin-right: 15px;
+  }
+
+  .jq-selectbox {
+    &:first-child {
+      margin-right: 15px;
+    }
+
+    &:hover {
+
+      // я тут поставив ховер бо не знаю як привязати до активу
+      .jq-selectbox__trigger-arrow {
+        transform: rotate(-90deg);
+      }
+    }
+
+    &__select {
+      height: auto;
+      padding: 14.1px 43px 14.1px 15px;
+      background: none;
+      box-shadow: none;
+      text-shadow: none;
+      background-color: #fff;
+      border: 1px solid #C1C1C1;
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.2;
+      color: $dark-500;
+
+      @include r($xs) {
+        padding: 14.1px 30px 14.1px 10px;
+      }
+    }
+
+    &__trigger {
+      top: 0;
+      right: 0;
+      width: auto;
+      height: 100%;
+      border-left: none;
+    }
+
+    &__trigger-arrow {
+      top: 18px;
+      right: 15px;
+      width: 6px;
+      height: 10px;
+      border: none;
+      background-image: url(../images/chevron.svg);
+      transition: transform 0.3s ease-in-out;
+      transform: rotate(90deg);
+
+      @include r($xs) {
+        right: 10px;
+      }
+    }
+
+    &__dropdown {
+      position: absolute;
+      // top: 100%;
+    }
+  }
+
+  &__btns {
+    display: flex;
+
+    @include r($sm) {
+      display: none;
+    }
+  }
+
+  &__view-btn {
+    height: 47px;
+    width: 47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $silver-100;
+    border-radius: 3px;
+
+    &--active {
+      svg {
+        fill: $main-color;
+      }
+    }
+
+    &:first-child {
+      margin-right: 15px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-auto-rows: 409px;
+    justify-content: center;
+    grid-gap: 30px;
+    margin-bottom: 48px;
+
+    @include r($xl) {
+      grid-gap: 20px;
+      grid-template-columns: repeat(3, 270px);
+    }
+
+    @include r($md) {
+      grid-gap: 5px;
+      grid-template-columns: repeat(3, 250px);
+    }
+
+    @include r($sm) {
+      grid-gap: 5px;
+      grid-template-columns: repeat(2, 280px);
+      grid-auto-rows: 379px;
+    }
+
+    @include r($xs) {
+      margin-bottom: 24px;
+      grid-gap: 5px;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: auto;
+    }
+
+    &--list {
+      grid-template-columns: repeat(2, 466px);
+      grid-auto-rows: 162px;
+
+      @include r($xl) {
+        grid-template-columns: repeat(2, 410px);
+      }
+
+      @include r($md) {
+        grid-gap: 10px;
+        grid-template-columns: repeat(2, 370px);
+      }
+
+      @include r($sm) {
+        grid-template-columns: repeat(2, 370px);
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  .product-card {
+    &__link {
+      margin-bottom: 6px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .btn {
+      font-weight: 400;
+      padding: 12px 25px;
+      margin: 0;
+
+      @include r($sm) {
+        margin-bottom: 24px;
+      }
+    }
+
+    @include r($sm) {
+      flex-direction: column;
+    }
+  }
+
+}
+
+.pagination {
+  display: flex;
+
+  &__list {
+    display: flex;
+    margin-right: 6px;
+  }
+
+  &__item {
+    @include r($xs) {
+      display: none;
+    }
+
+    &--hide {
+      display: block;
+    }
+
+    &:not(:last-child) {
+      margin-right: 6px;
+    }
+
+    &:first-child {
+      display: block;
+    }
+
+    &:last-child {
+      display: block;
+    }
+
+  }
+
+  &__link {
+    display: block;
+    height: 48px;
+    width: 48px;
+    background-color: #F6F6F6;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 48px;
+    color: $dark-500;
+
+    &--active {
+      border: 1px solid $dark-500;
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    background-color: #F6F6F6;
+    border-radius: 3px;
+
+    &--disabled {
+      svg {
+        fill: $silver-600;
+      }
+    }
+
+    &--prev {
+      transform: rotate(-180deg);
+      margin-right: 6px;
+
+    }
+
+    &--next {
+      svg {
+        fill: $dark-500;
+      }
+    }
+  }
+}
+
+.filter {
+  position: relative;
+  max-width: 300px;
+  min-width: 300px;
+  width: 100%;
+  background-color: #fff;
+
+  @include r($lg) {
+    max-width: 320px;
+    padding-right: 20px;
+    overflow-y: auto;
+    height: 100%;
+    padding-top: 76px;
+  }
+
+  &__close {
+    display: none;
+
+    @include r($lg) {
+      position: absolute;
+      top: 26px;
+      right: 30px;
+      display: flex;
+    }
+  }
+
+  &__box {
+    border: 1px solid #C1C1C1;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.3;
+    color: $dark-500;
+    border-radius: 6px;
+    overflow: hidden;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+  }
+
+  &__title {
+    position: relative;
+    font-size: 24px;
+    font-family: $open-sans;
+    line-height: 1.2;
+    color: $dark-900;
+    border-bottom: 1px solid #C1C1C1;
+    padding: 18px;
+    padding-right: 24px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 24px;
+      top: 26px;
+      transform: rotate(-90deg);
+      background-image: url(../images/chevron.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 11px;
+      height: 18px;
+    }
+
+    &--active {
+      border-bottom: 0px;
+
+      &::after {
+        transform: rotate(90deg);
+      }
+
+      &+form {
+        height: 0;
+        overflow: hidden;
+        padding: 0;
+      }
+    }
+  }
+
+  &__category {
+    padding: 12px 0;
+    height: 298px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: none;
+      background-color: $white;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      height: 20%;
+      border-radius: 10px;
+      background: #C4C4C4;
+    }
+
+  }
+
+  &__label {
+    position: relative;
+    padding: 6px 18px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__category-input {
+    @include input-hidden;
+
+    &:checked+.filter__category-checkbox {
+      color: $main-color;
+
+      &::before {
+        width: 6px;
+      }
+    }
+  }
+
+  &__category-checkbox {
+    display: block;
+    transition: color 0.1s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0px;
+      background-color: $main-color;
+      transition: width 0.1s ease-in-out;
+    }
+
+    &:hover {
+      color: $main-color;
+
+      &::before {
+        width: 3px;
+      }
+    }
+  }
+
+  &__proposition {
+    padding: 10px 0;
+    overflow-y: auto;
+  }
+
+  &__input {
+    @include input-hidden;
+
+    &:checked+.filter__checkbox {
+      background-image: url(../images/check.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 70%;
+    }
+  }
+
+  &__checkbox {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-color: $silver-100;
+    border: 1px solid $silver-600;
+    border-radius: 3px;
+    margin-right: 12px;
+  }
+
+  &__brand {
+    padding: 10px 0;
+  }
+
+  &__price {
+    padding: 18px;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 1;
+    color: $silver-600;
+  }
+
+  &__from,
+  &__to {
+    width: 80px;
+    padding: 9.4px 0px;
+    text-align: center;
+    background: #F6F6F6;
+    border: 1px solid #C1C1C1;
+    border-radius: 3px;
+    color: $dark-500;
+  }
+
+  .irs-line {
+    top: 30px;
+    height: 2px;
+    border-radius: 0;
+    background-color: #C4C4C4;
+  }
+
+  .irs-handle {
+    top: 22px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: $main-color;
+  }
+
+  .irs--flat .irs-handle>i:first-child {
+    display: none;
+  }
+
+  .irs--flat .irs-bar {
+    top: 30px;
+    height: 2px;
+    background-color: $main-color;
+  }
+
+  .irs-from,
+  .irs-to,
+  .irs-single,
+  .irs-min,
+  .irs-max {
+    display: none;
+  }
+
+}

@@ -6,8 +6,6 @@
     padding: 48px 0;
   }
 
-  &__inner {}
-
   &__wrapper {
     margin: 0 -81px;
 
@@ -16,28 +14,6 @@
       margin-right: 0px;
     }
   }
-
-  // .slick-slide {
-  //   &:not(:last-child) {
-  //     margin-right: 162px;
-
-  //     @include r($xl) {
-  //       margin-right: 135px;
-  //     }
-
-  //     @include r($lg) {
-  //       margin-right: 98px;
-  //     }
-
-  //     @include r($md) {
-  //       margin-right: 53px;
-  //     }
-
-  //     @include r($sm) {
-  //       margin-right: 70px;
-  //     }
-  //   }
-  // }
 
   &__item {
     margin: 0 81px;
@@ -59,9 +35,6 @@
       margin: 0 40px;
     }
 
-    // @include r($lg) {
-    //   margin: 0 49px;
-    // }
   }
 
   &__link {

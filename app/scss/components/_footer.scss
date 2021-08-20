@@ -34,7 +34,7 @@
       justify-content: center;
       flex-wrap: wrap;
       row-gap: 30px;
-      column-gap: 30px;
+      column-gap: 40px;
     }
 
     @include r($xs) {
@@ -108,9 +108,7 @@
 
     @include r($lg) {
       column-gap: 28%;
-      // max-width: 37%;
       max-width: 100%;
-
     }
 
     @include r($md) {
@@ -124,7 +122,6 @@
       column-count: 2;
       column-gap: 45%;
       max-width: 100%;
-      //   margin-right: -62px;
     }
 
     @include r($xs) {

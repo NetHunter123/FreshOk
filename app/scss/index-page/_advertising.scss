@@ -74,7 +74,7 @@
         padding-right: 16px;
       }
 
-      .advertising__text {
+      .advertising-card__text {
         @include r($md) {
           max-width: 480px;
         }
@@ -84,11 +84,11 @@
         }
 
         @include r($xs) {
-          max-width: 280px;
+          max-width: 310px;
         }
       }
 
-      h3 {
+      .advertising-card__title {
         max-width: 510px;
       }
 
@@ -142,6 +142,14 @@
     font-weight: 600;
     font-size: 30px;
     @include line-clamps(3);
+
+    @include r($xl) {
+      font-size: 24px;
+    }
+
+    @include r($md) {
+      font-size: 30px;
+    }
 
     @include r($sm) {
       @include line-clamps(4);
