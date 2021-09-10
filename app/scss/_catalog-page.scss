@@ -36,10 +36,10 @@
   }
 
   &__wrap {
-    margin-right: 30px;
+    margin-right: 28px;
 
     @include r($lg) {
-      position: absolute;
+      position: fixed;
       overflow-x: hidden;
       width: 0;
       top: 0;
@@ -110,25 +110,29 @@
     margin-right: 15px;
   }
 
+  .opened .jq-selectbox__select {
+    border: 1px solid $dark-500;
+    border-radius: 3px 3px 0px 0px;
+  }
+
+  .focused .jq-selectbox__select {
+    box-shadow: 0px 0px 0px 3px $green-200;
+  }
+
+  .opened .jq-selectbox__trigger-arrow {
+    transform: rotate(-90deg);
+  }
+
   .jq-selectbox {
-    &:first-child {
+    &:not(:last-child) {
       margin-right: 15px;
     }
 
-    &:hover {
-
-      // я тут поставив ховер бо не знаю як привязати до активу
-      .jq-selectbox__trigger-arrow {
-        transform: rotate(-90deg);
-      }
-    }
+    cursor: pointer;
 
     &__select {
-      height: auto;
+      position: relative;
       padding: 14.1px 43px 14.1px 15px;
-      background: none;
-      box-shadow: none;
-      text-shadow: none;
       background-color: #fff;
       border: 1px solid #C1C1C1;
       border-radius: 3px;
@@ -136,6 +140,7 @@
       font-weight: 400;
       line-height: 1.2;
       color: $dark-500;
+      transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
 
       @include r($xs) {
         padding: 14.1px 30px 14.1px 10px;
@@ -143,16 +148,13 @@
     }
 
     &__trigger {
-      top: 0;
-      right: 0;
-      width: auto;
-      height: 100%;
+      position: absolute;
+      top: 18px;
+      right: 15px;
       border-left: none;
     }
 
     &__trigger-arrow {
-      top: 18px;
-      right: 15px;
       width: 6px;
       height: 10px;
       border: none;
@@ -166,8 +168,28 @@
     }
 
     &__dropdown {
+      top: 100%;
       position: absolute;
-      // top: 100%;
+      background-color: #fff;
+      width: 100% !important;
+      border: 1px solid #C1C1C1;
+      border-radius: 0px 0px 6px 6px;
+
+      ul {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 120%;
+        padding: 7.5px 0;
+      }
+
+      li {
+        padding: 7.5px 12px;
+
+
+        &:hover {
+          background-color: $silver-600;
+        }
+      }
     }
   }
 
@@ -257,6 +279,24 @@
     &__link {
       margin-bottom: 6px;
     }
+
+    .availability {
+      @include r($xs) {
+        font-size: 8px;
+      }
+    }
+
+    .product-offer__rating span {
+      @include r($xs) {
+        font-size: 10px;
+      }
+    }
+
+    &__title {
+      @include r($xs) {
+        @include line-clamps(3);
+      }
+    }
   }
 
   &__bottom {
@@ -327,6 +367,10 @@
     &--active {
       border: 1px solid $dark-500;
     }
+
+    &:hover {
+      border: 1px solid $dark-500;
+    }
   }
 
   &__arrow {
@@ -337,6 +381,10 @@
     width: 48px;
     background-color: #F6F6F6;
     border-radius: 3px;
+
+    &:hover {
+      border: 1px solid $dark-500;
+    }
 
     &--disabled {
       svg {
@@ -397,6 +445,18 @@
       margin-bottom: 30px;
     }
 
+    form {
+      max-height: 300px;
+      overflow-y: auto;
+      transition: max-height 0.2s ease-in-out,
+        padding 0.2s ease-in-out;
+    }
+
+    &--category {
+      .filter__label {
+        padding: 5.6px 18px;
+      }
+    }
   }
 
   &__title {
@@ -408,6 +468,12 @@
     border-bottom: 1px solid #C1C1C1;
     padding: 18px;
     padding-right: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $green-200;
+    }
 
     &::after {
       content: "";
@@ -431,17 +497,26 @@
       }
 
       &+form {
-        height: 0;
+        max-height: 0;
         overflow: hidden;
         padding: 0;
       }
     }
   }
 
+  &__label {
+    position: relative;
+    padding: 6px 18px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    @include line-clamps(1);
+    max-width: 100%;
+  }
+
   &__category {
-    padding: 12px 0;
-    height: 298px;
-    overflow-y: auto;
+    padding: 10px 0;
+    height: 296px;
 
     &::-webkit-scrollbar {
       width: 4px;
@@ -457,15 +532,6 @@
       border-radius: 10px;
       background: #C4C4C4;
     }
-
-  }
-
-  &__label {
-    position: relative;
-    padding: 6px 18px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
   }
 
   &__category-input {
@@ -483,6 +549,7 @@
   &__category-checkbox {
     display: block;
     transition: color 0.1s ease-in-out;
+    @include line-clamps(1);
 
     &::before {
       content: "";
@@ -505,7 +572,7 @@
   }
 
   &__proposition {
-    padding: 10px 0;
+    padding: 11px 0;
     overflow-y: auto;
   }
 
@@ -523,7 +590,7 @@
   &__checkbox {
     display: block;
     height: 24px;
-    width: 24px;
+    min-width: 24px;
     background-color: $silver-100;
     border: 1px solid $silver-600;
     border-radius: 3px;

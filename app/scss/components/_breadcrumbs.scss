@@ -1,9 +1,13 @@
 .breadcrumbs {
   background-color: $silver-100;
 
+  @include r($xs) {
+    padding: 24px 0;
+  }
+
   &__list {
     display: flex;
-    overflow-x: auto;
+    flex-wrap: wrap;
   }
 
   &__item {
@@ -16,7 +20,16 @@
     white-space: nowrap;
     letter-spacing: 0.03em;
 
+    @include r($xs) {
+      padding: 0 0;
+      white-space: normal;
+    }
+
     &:not(:last-child) {
+      :hover {
+        color: $main-color;
+      }
+
       margin-right: 18px;
 
       &::after {
@@ -33,5 +46,7 @@
     }
   }
 
-  &__link {}
+  &__link {
+    transition: color 0.3s ease-in-out;
+  }
 }

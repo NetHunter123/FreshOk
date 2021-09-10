@@ -12,13 +12,11 @@
 .side-menu {
   position: absolute;
   top: 0;
-  bottom: 0;
   right: 0;
   left: 0;
   width: 0;
   overflow: hidden;
-  overflow-y: scroll;
-  z-index: 10;
+  z-index: 15;
   transition: width 0.2s linear 0.2s;
 
   &::before {
@@ -47,8 +45,9 @@
   }
 
   &__inner {
+    overflow-y: auto;
     position: relative;
-    min-height: 100vh;
+    height: 100vh;
     max-width: 300px;
     width: 100%;
     background-color: $white;

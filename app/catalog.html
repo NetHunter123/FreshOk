@@ -8,31 +8,19 @@
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
     <link rel="icon" href="images/favicon.svg" type="image/x-icon">
-    <title>Фрешок</title>
+    <title>Каталог</title>
   </head>
 
   <body class="body">
     @@include('./parts/_header.html')
 
     <main class="main">
-      <h1 class="sr-only">Магазин продуктов Фрешок</h1>
-      <section class="breadcrumbs">
-        <div class="breadcrumbs__container"></div>
-        <div class="container">
-          <ul class="breadcrumbs__list">
-            <li class="breadcrumbs__item">
-              <a class="breadcrumbs__link" href="index.html">
-                Главная
-              </a>
-            </li>
-            <li class="breadcrumbs__item">
-              <a class="breadcrumbs__link" href="#">
-                Каталог товаров
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <h1 class="sr-only">Каталог товаров</h1>
+
+      @@include('./parts/_breadcrumbs.html',{
+      "crumbsloop":'' ,
+      "final-crumbs":"Каталог товаров"
+      })
 
       <section class="catalog">
         <div class="container">
@@ -40,9 +28,7 @@
           <div class="catalog__inner">
             <div class="catalog__wrap">
               <div class="catalog__filters filter">
-
                 <button class="close filter__close" aria-label="закрыть фильтры" type="button"></button>
-
                 <div class="filter__box filter__box--category ">
                   <h3 class="filter__title">Категории</h3>
                   <form class="filter__category" action="#">
@@ -78,7 +64,6 @@
                       <input class="filter__category-input" type="checkbox">
                       <span class="filter__category-checkbox">Алкоголь</span>
                     </label>
-                    <!-- <li class="filter__item">Бакалея</li> -->
                   </form>
                 </div>
 
@@ -144,13 +129,13 @@
                   <form class="filter__price" action="#">
                     <div class="filter__controls">
                       <div class="filter__wrap">от
-                        <input type="text" class="filter__from" value="0" /> ₽
+                        <input type="number" class="filter__from" value="0" /> ₽
                       </div>
                       <div class="filter__wrap">до
-                        <input type="text" class="filter__to" value="0" /> ₽
+                        <input type="number" class="filter__to" value="0" /> ₽
                       </div>
                     </div>
-                    <input class="filter__price-input" type="text" name="filter-price" id="price" data-min="0"
+                    <input class="filter__price-input" type="number" name="filter-price" id="price" data-min="0"
                       data-max="1200" data-from="100" data-to="1000">
                   </form>
                 </div>
@@ -161,14 +146,18 @@
                 <button class="catalog__filter-btn" type="button" aria-label="фильтер"></button>
                 <form class="catalog__select-form" action="#">
                   <select class="catalog__sort select-style">
-                    <option value="">По названию</option>
-                    <option value="">По цене</option>
-                    <option value="">По названию</option>
+                    <option value="1" selected>По названию</option>
+                    <option value="2">По популярности</option>
+                    <option value="3">Сначала дешевые</option>
+                    <option value="4">Сначала дорогие</option>
+                    <option value="5">По алфавиту</option>
                   </select>
                   <select class="catalog__show select-style">
-                    <option value="">по 12</option>
-                    <option value="">по 18</option>
-                    <option value="">по 24</option>
+                    <option value="1" selected>по 12</option>
+                    <option value="2">по 18</option>
+                    <option value="3">по 24</option>
+                    <option value="3">по 30</option>
+                    <option value="3">по 36</option>
                   </select>
                 </form>
                 <div class="catalog__btns">
@@ -278,7 +267,7 @@
                           <use xlink:href="images/sprite.svg#heart"></use>
                         </svg>
                       </button>
-                      <a class="product-card__link" href="#">
+                      <a class="product-card__link" href="product-page.html">
                         <img class="product-card__img" height="226" width="300" src="images/goods/dragon-fruit.jpg"
                           alt="Питахайя">
                       </a>
@@ -681,45 +670,7 @@
               </div>
               <div class="catalog__bottom">
                 <button class="btn btn--green" type="button">Показать еще</button>
-                <div class="pagination">
-                  <a class="pagination__arrow pagination__arrow--prev  pagination__arrow--disabled" href="#">
-                    <svg width="11" height="18">
-                      <use xlink:href="images/sprite.svg#chevron"></use>
-                    </svg>
-                  </a>
-                  <ul class="pagination__list">
-                    <li class="pagination__item ">
-                      <a class="pagination__link pagination__link--active" href="#">
-                        1
-                      </a>
-                    </li>
-                    <li class="pagination__item">
-                      <a class="pagination__link" href="#">
-                        2
-                      </a>
-                    </li>
-                    <li class="pagination__item pagination__item--hide">
-                      <span class="pagination__link" href="#">
-                        ...
-                      </span>
-                    </li>
-                    <li class="pagination__item">
-                      <a class="pagination__link" href="#">
-                        9
-                      </a>
-                    </li>
-                    <li class="pagination__item">
-                      <a class="pagination__link" href="#">
-                        10
-                      </a>
-                    </li>
-                  </ul>
-                  <a class="pagination__arrow pagination__arrow--next" href="#">
-                    <svg width="11" height="18">
-                      <use xlink:href="images/sprite.svg#chevron"></use>
-                    </svg>
-                  </a>
-                </div>
+                @@include('./parts/_pagination.html')
               </div>
             </div>
           </div>
