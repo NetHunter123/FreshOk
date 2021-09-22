@@ -123,11 +123,11 @@ function cleanDist() {
 
 function build() {
   return src([
-      'app/**/*.html',
-      'app/css/style.min.css',
-      'app/js/main.min.js'
+      'build/**/*.html',
+      'build/css/style.min.css',
+      'build/js/main.min.js'
     ], {
-      base: 'app'
+      base: 'build'
     })
     .pipe(dest('dist'))
 }
