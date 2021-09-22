@@ -53,20 +53,6 @@ $inputTo.on("input", function () {
 w = $(window).width();
 
 $(function () {
-  $('.product__close').on('click', function () {
-    $(".product__wrapper").removeClass("product__wrapper--active");
-    $(".body").removeClass("body--active");
-  })
-
-  $('.product__btn').on('click', function (e) {
-    e.preventDefault();
-    $('.product__btn').removeClass('product__btn--active');
-    $(this).addClass('product__btn--active');
-
-
-    $('.product__tab').removeClass('product__tab--active');
-    $($(this).attr('href')).addClass('product__tab--active');
-  })
 
   $('.select-style').styler();
 
@@ -231,20 +217,6 @@ $(function () {
 
 
 $(document).mouseup(function (e) {
-  if ($('.product__wrapper').is(e.target)) {
-    $(".product__wrapper").toggleClass("product__wrapper--active");
-  }
-
-  if ($('.product__item').is(e.target) || $('.product__img').is(e.target) && !$('.product__wrapper').hasClass('product__wrapper--active')) {
-    $(".product__wrapper").addClass("product__wrapper--active");
-  }
-
-  if ($('.product__wrapper').hasClass('product__wrapper--active')) {
-    $(".body").addClass("body--active");
-  } else {
-    $(".body").removeClass("body--active");
-  }
-
   if ($(".catalog__wrap").has(e.target).length === 0) {
     if (
       $(".catalog__wrap").is(e.target) &&
@@ -279,13 +251,3 @@ $(document).mouseup(function (e) {
     }
   }
 });
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   window.addEventListener('click', e => { // при клике в любом месте окна браузера
-//     const target = e.target // находим элемент, на котором был клик
-//     if (!target.closest('.cart__inner')) { // если этот элемент или его родительские элементы не окно корзины
-//       $('.cart').classList.remove('cart--active') // то закрываем секцию, удаляя активный класс
-//     }
-//   })
-// });
