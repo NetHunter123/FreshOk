@@ -10,18 +10,18 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.3.1",
-    "browser-sync": "^2.27.4",
+    "browser-sync": "^3.0.2",
     "concat": "^1.0.3",
     "del": "^6.0.0",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-file-include": "^2.3.0",
-    "gulp-imagemin": "^7.1.0",
+    "gulp-imagemin": "^4.1.0",
     "gulp-sass": "^5.0.0",
     "gulp-scss": "^1.4.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-svg-sprite": "^1.5.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-svg-sprite": "^2.0.3",
     "gulp-terser": "^2.0.1",
     "gulp-uglify": "^3.0.2",
     "ion-rangeslider": "^2.3.1",
@@ -32,5 +32,8 @@
     "sass": "^1.35.2",
     "slick-carousel": "^1.8.1"
   },
-  "dependencies": {}
+  "overrides": {
+    "graceful-fs": "^4.2.11"
+  }
+
 }
